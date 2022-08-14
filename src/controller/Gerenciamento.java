@@ -1,3 +1,4 @@
+package controller;
 import conexao.BancoDeDados;
 import model.Produto;
 
@@ -35,6 +36,7 @@ public class Gerenciamento {
 			sintaxeBanco.ModificarProduto(produto2);
 			// Exclusao
 			sintaxeBanco.ExcluirProduto(produto);
+			//Listagem
 			for(Produto p: sintaxeBanco.getProdutos()) {
 				System.out.println("\nID: " + p.getIdProduto());
 				System.out.println("Produto: " + p.getNomeProduto());
