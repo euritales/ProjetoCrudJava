@@ -2,43 +2,42 @@ package model;
 
 public class Produto {
 
-
-	private int idProduto;
-	private String nomeProduto;
-	private int qtdProduto;
-	private boolean tipoMedicamento;
-	private boolean tipoGenerico;
+	private int id_produto;
+	private String nome_produto;
+	private int qtd_produto;
+	private boolean tipo_medicamento;
+	private boolean tipo_generico;
 	private Double preco;
 	
-	public int getIdProduto() {
-		return idProduto;
+	public int getId_produto() {
+		return id_produto;
 	}
-	public void setIdProduto(int idProduto) {
-		this.idProduto = idProduto;
+	public void setId_produto(int id_produto) {
+		this.id_produto = id_produto;
 	}
-	public String getNomeProduto() {
-		return nomeProduto;
+	public String getNome_produto() {
+		return nome_produto;
 	}
-	public void setNomeProduto(String nomeProduto) {
-		this.nomeProduto = nomeProduto;
+	public void setNome_produto(String nome_produto) {
+		this.nome_produto = nome_produto;
 	}
-	public int getQtdProduto() {
-		return qtdProduto;
+	public int getQtd_produto() {
+		return qtd_produto;
 	}
-	public void setQtdProduto(int qtdProduto) {
-		this.qtdProduto = qtdProduto;
+	public void setQtd_produto(int qtd_produto) {
+		this.qtd_produto = qtd_produto;
 	}
-	public boolean isTipoMedicamento() {
-		return tipoMedicamento;
+	public boolean isTipo_medicamento() {
+		return tipo_medicamento;
 	}
-	public void setTipoMedicamento(boolean tipoMedicamento) {
-		this.tipoMedicamento = tipoMedicamento;
+	public void setTipo_medicamento(boolean tipo_medicamento) {
+		this.tipo_medicamento = tipo_medicamento;
 	}
-	public boolean isTipoGenerico() {
-		return tipoGenerico;
+	public boolean isTipo_generico() {
+		return tipo_generico;
 	}
-	public void setTipoGenerico(boolean tipoGenerico) {
-		this.tipoGenerico = tipoGenerico;
+	public void setTipo_generico(boolean tipo_generico) {
+		this.tipo_generico = tipo_generico;
 	}
 	public Double getPreco() {
 		return preco;
@@ -46,6 +45,7 @@ public class Produto {
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
+	
 
     
 	

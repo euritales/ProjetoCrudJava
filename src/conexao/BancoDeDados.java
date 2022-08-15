@@ -49,7 +49,7 @@ public class BancoDeDados {
 
 //	public String getProduto() { // Tentar criar um get Unitario
 //		try {
-//			String query = "Select * from medicamentos where nome_medicamento like ' ";
+//			String query = "Select * from produtos where nome_medicamento like ' ";
 //			this.resultset = this.statement.executeQuery(query);
 //			this.statement = this.connection.createStatement();
 //	}
@@ -59,16 +59,17 @@ public class BancoDeDados {
 		List<Produto> produtos = new ArrayList<Produto>();
 				
 		try {
-			String query = "Select * from medicamentos";
+			String query = "Select * from produto";
 			this.resultset = this.statement.executeQuery(query);
 			this.statement = this.connection.createStatement();
 			while(this.resultset.next()) {
 				Produto produto = new Produto();
 				
-				produto.setIdProduto(resultset.getInt("id_medicamento"));
-				produto.setNomeProduto(resultset.getString("nome_medicamento"));
-				produto.setQtdProduto(resultset.getInt("qtd_medicamento"));
-				produto.setTipoGenerico(resultset.getBoolean("tipo_generico"));
+				produto.setId_produto(resultset.getInt("id_produto"));
+				produto.setNome_produto(resultset.getString("nome_produto"));
+				produto.setQtd_produto(resultset.getInt("qtd_produto"));
+				produto.setTipo_medicamento(resultset.getBoolean("tipo_medicamento"));
+				produto.setTipo_generico(resultset.getBoolean("tipo_generico"));
 				produto.setPreco(resultset.getDouble("preco"));
 				produtos.add(produto);
 			}
@@ -81,10 +82,10 @@ public class BancoDeDados {
 	// insercao
 	public void InserirProdutos(Produto produto) {
 		try {
-			String query = "insert into medicamentos values (null,'"+ produto.getNomeProduto() +"'," + produto.getQtdProduto() +","+produto.isTipoGenerico()+", "+produto.getPreco()+");";
+			String query = "insert into produto values (null, '"+ produto.getNome_produto() +"'," + produto.getQtd_produto() +","+produto.isTipo_generico() + "," + produto.isTipo_medicamento() +", "+produto.getPreco()+");";
+
 			System.out.println(query);
 			this.statement.executeUpdate(query);
-			
 		}catch(Exception e) {
 			System.out.println("Erro: " + e.getMessage());
 		}
@@ -93,7 +94,9 @@ public class BancoDeDados {
 	//Edicao
 	public void ModificarProduto(Produto produto) {
 		try {
-			String query = "update medicamentos set nome_medicamento ='" + produto.getNomeProduto() + "', qtd_medicamento = '" + produto.getQtdProduto() + "', preco="+produto.getPreco()+"   where id_medicamento =" + produto.getIdProduto()+ ";";
+			String query = "update produto set nome_produto ='" + produto.getNome_produto() + "', qtd_produto = '" + produto.getQtd_produto() + "', preco="+produto.getPreco()+"   where id_produto =" + produto.getId_produto()+ ";";
+			System.out.println(query);
+
 			this.statement.executeUpdate(query);
 		}catch(Exception e) {
 			System.out.println("Erro: " + e.getMessage());
@@ -103,7 +106,7 @@ public class BancoDeDados {
 	//Exclusao
 	public void ExcluirProduto (Produto produto) {
 		try {
-			String query = "delete from medicamentos where id_medicamento="+ produto.getIdProduto() +" ;";
+			String query = "delete from produto where id_produto="+ produto.getId_produto() +" ;";
 			this.statement.executeUpdate(query);
 		}catch(Exception e) {
 			System.out.println("Erro: " + e.getMessage());
@@ -113,4 +116,9 @@ public class BancoDeDados {
 	}
 	
 
+	
+	
+	
+	
+	
 }
